@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+      {% if current_user.is_authenticated %}
+      <div class="buttons">
+          <h2 class="prof_g">{{current_user.last_name}} {{current_user.first_name}}</h2>
+          <a class='button_a' href="/profile"><div class="button_login"><h4>Профиль</h4></div></a>
+
+      </div>
+      {% else %}
+      <div class="buttons">
+
+          <a class='button_a' href="/log"><div class="button_login"><h4>Вход</h4></div></a>
+
+      </div>
+      {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="name">
+      <a href="{{url_for('general')}}"><div class="logo">
+
+      </div></a>
+    </div>
+    <div class="main">
+
+      <div class="form">
+        <div class="hi">
+          <h1>Добро Пожаловать!</h1>
+        </div>
+
+        <form method="post" class="inputs">
+          <input type="text" name="fname" placeholder="Имя" class="hunt" />
+          <input type="text" name="lname" placeholder="Фамилия" class="hunt" />
+          <input type="text" name="login" placeholder="Логин (идивидуальный)" class="hunt" />
+          <input type="password" name="password" placeholder="Пароль" class="hunt" />
+          <input type="password" name="confirm_password" placeholder="Подтвердите пароль" class="hunt" />
+          <input type="submit" value="Создать" />
+          <h4 class="voiti">Уже есть аккаунт? <a class='button_a' href="{{url_for('general')}}">Войти</a></h4>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
