@@ -5,11 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-      <div class="buttons">
+      <div>
             <h1 class="prof">{{current_user.last_name}} {{current_user.first_name}}</h1>
           <a class='button_a' href="/"><div class="button_login"><h4>На главную</h4></div></a>
           <a class='button_a' href="/out_akk"><div id="new_album" class="button_login"><h4>Выход</h4></div></a>
 
       </div>
+
+    <div>
+        <form method="post" class="inputs">
+          <input type="text" name="description" placeholder="Описание" class="hunt" />
+          <input type="submit" value="Добавить" />
+        </form>
+    </div>
+
 </body>
 </html>

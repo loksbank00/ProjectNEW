@@ -1,3 +1,5 @@
+from crypt import methods
+
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user
@@ -77,9 +79,9 @@ def general():
 
 @app.route("/reg", methods=['GET','POST'])
 def reg():
-    #if current_user.is_authenticated:
-        #return redirect(url_for('general'))
-    #else:
+    if current_user.is_authenticated:
+        return redirect(url_for('general'))
+    else:
         fname = ''
         lname = ''
         login = ''
@@ -115,9 +117,9 @@ def reg():
 
 @app.route("/log", methods=['GET','POST'])
 def log():
-    # if current_user.is_authenticated:
-    #     return redirect(url_for('general'))
-    # else:
+    if current_user.is_authenticated:
+        return redirect(url_for('general'))
+    else:
         login = ''
         password = ''
         if request.method == 'POST':
@@ -150,8 +152,14 @@ def logout():
     return redirect('general')
 
 
-@app.route("/profile")
+@app.route("/profile", methods=['GET','POST'])
 def profile():
+    if request.method == 'POST':
+        description = request.form.get('description')
+        user = Users.query.filter_by(user_id=current_user.id)
+        new =
+        db.session.add(new)
+        db.session.commit()
     return render_template('profile.html')
 
 
